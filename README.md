@@ -12,6 +12,7 @@ Our group aims to increase the efficiency of staff monitoring the camera feeds a
 youtube link here
 
 ## c) Solution Architecture
+![Solution Architecture](https://github.com/jitwei98/ARTSS/edit/master/project-architecture.jpg?raw=true)
 
 ## d) Solution Description
 
@@ -45,8 +46,6 @@ The source of the camera feed can be changed on `line 47 : vehicle-motion-path-d
 ```
 cap = cv.VideoCapture("test_video_4.mp4")
 ```
-
-## h) Live Demo
 
 ## i) Technologies Used
 [IBM Cloud](https://www.ibm.com/sg-en/cloud)
