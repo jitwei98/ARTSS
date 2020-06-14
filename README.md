@@ -12,7 +12,7 @@ We do so by flagging and detection of the following:
 1. Accidents/road incidents
 2. Dangerous driving behaviour, including drink driving, falling asleep at the wheel, aggressive driving etc.
 
-We hope that this system would lead to faster response to incidents and possible prediction of accidents.
+We hope that this system would lead to faster response to incidents and possible intervention to reduce the chances of accidents.
 
 ## b) Pitch Video
 https://youtu.be/GCLLyg7mdAA
