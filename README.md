@@ -19,8 +19,6 @@ youtube link here
 
 ## f) Getting Started
 
-## h) Live Demo
-
 ## i) Technologies Used
 [IBM Cloud](https://www.ibm.com/sg-en/cloud)
 
