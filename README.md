@@ -21,6 +21,9 @@ https://youtu.be/GCLLyg7mdAA
 ![Architecture](https://github.com/jitwei98/Emanmaet-ARTSS_SCDFXIBM/blob/master/solution-architecture.png)
 
 ## d) Solution Description
+Our solution tracks objects on the road, as well as its motion across frames. With this data, we are able to detect dangerous driver behavoir by extracting details such as the speed of the lane change (aggressive or drunk driving) or if the car is drifting between lanes (falling asleep at the wheel). 
+
+This could preempt possible incidents, allowing for proper action to be prepared - dispatching of personnel or alerting of the driver via led street signs etc.
 
 ## f) Getting Started
 
