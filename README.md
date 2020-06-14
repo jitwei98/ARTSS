@@ -23,7 +23,11 @@ youtube link here
 
 ## i) Technologies Used
 [IBM Cloud](https://www.ibm.com/sg-en/cloud)
+
 [OpenCV](http://opencv.org/)
+
 [Node-RED](https://nodered.org/)
+
 [Telegram Bot API](https://core.telegram.org/bots/api)
+
 [Watson Studio AutoAI](https://www.ibm.com/sg-en/cloud/watson-studio/autoai)
