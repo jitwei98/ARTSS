@@ -1,5 +1,6 @@
 # ARTSS
 Automated Realtime Traffic Surveillance System
+
 Team Emanmaet: Chuah Jin Wei, Lim Jit Wei, Chong Khe Yang, Lim Shuen
 
 ## a) Problem Statement
