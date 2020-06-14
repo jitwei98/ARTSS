@@ -1,0 +1,248 @@
+[
+    {
+        "id": "adcfea1d.f1b3e",
+        "type": "tab",
+        "label": "Voice Enabled COVID Chatbot",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d938fe85.f4cc3",
+        "type": "telegram command",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "command": "/start",
+        "bot": "6f039462.364e24",
+        "strict": false,
+        "hasresponse": true,
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "c8e1c095.0c8d58"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "13b21870.e0fb5",
+        "type": "telegram sender",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "bot": "6f039462.364e24",
+        "x": 680,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8e1c095.0c8d58",
+        "type": "function",
+        "z": "adcfea1d.f1b3e",
+        "name": "Add to subscription list",
+        "func": "var subscribers = flow.get(\"subscribers\");\nif (!subscribers) {\n    subscribers = new Set();\n}\nsubscribers.add(msg.payload.chatId);\nflow.set(\"subscribers\", subscribers);\n\nmsg.payload = \t{\n    chatId: msg.payload.chatId,\n    type: 'message',\n    content: 'Subscribed to notifications!'\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 430,
+        "y": 440,
+        "wires": [
+            [
+                "13b21870.e0fb5"
+            ]
+        ]
+    },
+    {
+        "id": "f0d1c27b.07582",
+        "type": "http in",
+        "z": "adcfea1d.f1b3e",
+        "name": "TEST",
+        "url": "/test",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 140,
+        "wires": [
+            [
+                "ca0eb033.7ba9"
+            ]
+        ]
+    },
+    {
+        "id": "c5a9c414.e69ea8",
+        "type": "telegram sender",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "bot": "6f039462.364e24",
+        "x": 900,
+        "y": 140,
+        "wires": [
+            [
+                "d6e679b.d863008"
+            ]
+        ]
+    },
+    {
+        "id": "9f2df36d.c7c7e8",
+        "type": "function",
+        "z": "adcfea1d.f1b3e",
+        "name": "Construct Telegram message",
+        "func": "var subscribers = flow.get(\"subscribers\");\n//  TODO: handle when get returns no subscribers\n\nmsg.payload = \t{\n    chatId: Array.from(subscribers),\n    type: 'message',\n    content: msg.payload\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 660,
+        "y": 160,
+        "wires": [
+            [
+                "c5a9c414.e69ea8"
+            ]
+        ]
+    },
+    {
+        "id": "fe266360.8e9e38",
+        "type": "telegram command",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "command": "/unsubscribe",
+        "bot": "6f039462.364e24",
+        "strict": false,
+        "hasresponse": true,
+        "x": 190,
+        "y": 580,
+        "wires": [
+            [
+                "a3d780cd.f2d3e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "a3d780cd.f2d3e",
+        "type": "function",
+        "z": "adcfea1d.f1b3e",
+        "name": "Update subscription list",
+        "func": "var subscribers = flow.get(\"subscribers\");\nif (!subscribers) {\n    return;\n}\nsubscribers.delete(msg.payload.chatId);\nflow.set(\"subscribers\", subscribers);\n\nmsg.payload = \t{\n    chatId: msg.payload.chatId,\n    type: 'message',\n    content: 'Sad to see you leave :('\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 450,
+        "y": 580,
+        "wires": [
+            [
+                "e41b3041.563c9"
+            ]
+        ]
+    },
+    {
+        "id": "e41b3041.563c9",
+        "type": "telegram sender",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "bot": "6f039462.364e24",
+        "x": 700,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d6e679b.d863008",
+        "type": "http response",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1070,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "ca0eb033.7ba9",
+        "type": "template",
+        "z": "adcfea1d.f1b3e",
+        "name": "Construct notification text",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Dangerous driving spotted on camera {{ payload.cameraId }} ({{ payload.cameraName}}), \nlatitude: {{ payload.latitude }}, longitude: {{ payload.longitude }}",
+        "output": "str",
+        "x": 370,
+        "y": 160,
+        "wires": [
+            [
+                "9f2df36d.c7c7e8"
+            ]
+        ]
+    },
+    {
+        "id": "2f77d914.02990e",
+        "type": "telegram command",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "command": "/help",
+        "bot": "6f039462.364e24",
+        "strict": false,
+        "hasresponse": true,
+        "x": 170,
+        "y": 740,
+        "wires": [
+            [
+                "59163859.2717e"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "59163859.2717e",
+        "type": "function",
+        "z": "adcfea1d.f1b3e",
+        "name": "Construct help message",
+        "func": "msg.payload = \t{\n    chatId: msg.payload.chatId,\n    type: 'message',\n    content: '/start  Subscribe to notifications\\n/unsubscribe  Unsubscribe from notifications\\n\\n/help  Display this message'\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 460,
+        "y": 740,
+        "wires": [
+            [
+                "c93bdb84.817a"
+            ]
+        ]
+    },
+    {
+        "id": "c93bdb84.817a",
+        "type": "telegram sender",
+        "z": "adcfea1d.f1b3e",
+        "name": "",
+        "bot": "6f039462.364e24",
+        "x": 720,
+        "y": 740,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6f039462.364e24",
+        "type": "telegram bot",
+        "z": "",
+        "botname": " drunk-detector-bot-beta-1",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]
