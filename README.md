@@ -12,7 +12,6 @@ Our group aims to increase the efficiency of staff monitoring the camera feeds a
 youtube link here
 
 ## c) Solution Architecture
-![Solution Architecture](https://github.com/jitwei98/ARTSS/edit/master/project-architecture.jpg?raw=true)
 
 ## d) Solution Description
 
@@ -32,6 +31,7 @@ youtube link here
 1. Click deploy.
 1. Find your Telegram bot on Telegram and send `/start` to subscribe to the traffic notifications. Send `/help` to see the list of available commands.
 
+(Optional) Securing your Node RED API endpoints: refer to the instructions [here](https://nodered.org/docs/user-guide/runtime/securing-node-red#http-node-security).
 
 ### Python Scripts ###
 On a server/computer with the camera feed, run:
@@ -46,6 +46,8 @@ The source of the camera feed can be changed on `line 47 : vehicle-motion-path-d
 ```
 cap = cv.VideoCapture("test_video_4.mp4")
 ```
+
+## h) Live Demo
 
 ## i) Technologies Used
 [IBM Cloud](https://www.ibm.com/sg-en/cloud)
