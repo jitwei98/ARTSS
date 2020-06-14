@@ -15,7 +15,7 @@ We do so by flagging and detection of 2 things:
 We hope that this system would lead to faster response to incidents and possible prediction of accidents.
 
 ## b) Pitch Video
-youtube link here
+https://youtu.be/GCLLyg7mdAA
 
 ## c) Solution Architecture
 ![Architecture](https://github.com/jitwei98/Emanmaet-ARTSS_SCDFXIBM/blob/master/solution-architecture.png)
