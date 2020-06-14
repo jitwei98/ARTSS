@@ -1,7 +1,7 @@
 # ARTSS
 **Automated Realtime Traffic Surveillance System**
 
-Team EMANMAET: Chuah Jin Wei, Lim Jit Wei, Chong Khe Yang, Lim Shuen
+Team EMANMAET: *Chuah Jin Wei, Lim Jit Wei, Chong Khe Yang, Lim Shuen*
 
 ## a) Problem Statement
 With over 9000km of roads in Singapore today (and counting), monitoring accidents and ensuring the safety of road users is an increasingly difficult task which neccesitates a large amount of manpower.
