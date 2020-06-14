@@ -18,7 +18,7 @@ We hope that this system would lead to faster response to incidents and possible
 youtube link here
 
 ## c) Solution Architecture
-![Architecture](https://github.com/jitwei98/ARTSS/edit/master/project-architecture.jpg)
+![Architecture](https://github.com/jitwei98/Emanmaet-ARTSS_SCDFXIBM/blob/master/solution-architecture.png)
 
 ## d) Solution Description
 
