@@ -8,9 +8,9 @@ With over 9000km of roads in Singapore today (and counting), monitoring accident
 
 Our group aims to increase the efficiency of staff monitoring the camera feeds as well as flag out dangerous driving activity that might not be noticed by an operator. 
 
-We do so by flagging and detection of 2 things:
-1. accidents/road incidents
-2. dangerous driving behaviour, including drink driving, falling asleep at the wheel, aggressive driving etc.
+We do so by flagging and detection of the following:
+1. Accidents/road incidents
+2. Dangerous driving behaviour, including drink driving, falling asleep at the wheel, aggressive driving etc.
 
 We hope that this system would lead to faster response to incidents and possible prediction of accidents.
 
