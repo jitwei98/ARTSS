@@ -12,6 +12,7 @@ Our group aims to increase the efficiency of staff monitoring the camera feeds a
 youtube link here
 
 ## c) Solution Architecture
+(https://github.com/jitwei98/ARTSS/edit/master/project-architecture.jpg)
 
 ## d) Solution Description
 
