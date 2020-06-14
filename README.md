@@ -1,7 +1,7 @@
 # ARTSS
 **Automated Realtime Traffic Surveillance System**
 
-Team Emanmaet: Chuah Jin Wei, Lim Jit Wei, Chong Khe Yang, Lim Shuen
+Team EMANMAET: Chuah Jin Wei, Lim Jit Wei, Chong Khe Yang, Lim Shuen
 
 ## a) Problem Statement
 With over 9000km of roads in Singapore today (and counting), monitoring accidents and ensuring the safety of road users is an increasingly difficult task which neccesitates a large amount of manpower.
@@ -19,8 +19,11 @@ youtube link here
 
 ## f) Getting Started
 
-## g) Running Tests
-
 ## h) Live Demo
 
 ## i) Technologies Used
+[IBM Cloud](https://www.ibm.com/sg-en/cloud)
+[OpenCV](http://opencv.org/)
+[Node-RED](https://nodered.org/)
+[Telegram Bot API](https://core.telegram.org/bots/api)
+[Watson Studio AutoAI](https://www.ibm.com/sg-en/cloud/watson-studio/autoai)
