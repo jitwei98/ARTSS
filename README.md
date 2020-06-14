@@ -25,7 +25,7 @@ Our solution tracks objects on the road, as well as its motion across frames. Wi
 
 This could preempt possible incidents, allowing for proper action to be prepared - dispatching of personnel or alerting of the driver via led street signs etc.
 
-Our solution consists of Python scripts running on servers, with the camera feeds as input. When dangerous driver behaviors are detected, a HTTP request with the camera location information is sent to an API endpoint built using Node RED, and the Node RED API can push the notification to the preferred notification platform (such as SMS, a Web dashboard etc.), for the demo purpose of this hackathon, we use a Telegram bot with a simple subscribe/unsubscribe funtion to broadcast the notifications.
+Our solution consists of Python scripts running on servers, with the camera feeds as input. When dangerous driver behaviors are detected, a HTTP request with the camera location information is sent to an API endpoint built using Node RED, and the Node RED API will push the notifications to the preferred notification platform (such as SMS, a Web dashboard etc.), for the demo purpose of this hackathon, we use a Telegram bot with a simple subscribe/unsubscribe funtion to broadcast the notifications.
 
 ## f) Getting Started
 
