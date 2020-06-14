@@ -21,11 +21,11 @@ https://youtu.be/GCLLyg7mdAA
 ![Architecture](https://github.com/jitwei98/Emanmaet-ARTSS_SCDFXIBM/blob/master/solution-architecture.png)
 
 ## d) Solution Description
-Our solution tracks objects on the road, as well as its motion across frames. With this data, we are able to detect dangerous driver behavoir by extracting details such as the speed of the lane change (aggressive or drunk driving) or if the car is drifting between lanes (falling asleep at the wheel). 
+Our solution tracks objects on the road, as well as its motion across frames. With this data, we are able to detect dangerous driver behavior by extracting details such as the speed of the lane change (aggressive or drunk driving) or if the car is drifting between lanes (falling asleep at the wheel). 
 
 This could preempt possible incidents, allowing for proper action to be prepared - dispatching of personnel or alerting of the driver via led street signs etc.
 
-Our solution consists of Python scripts running on servers to process the footage, with the camera feeds as input. API is built on Node-RED and connected to a notification platfrom (Telegram as a stand-in).
+Our solution consists of Python scripts running on servers, with the camera feeds as input. When dangerous driver behaviors are detected, a HTTP request with the camera location information is sent to an API endpoint built using Node RED, and the Node RED API can push the notification to the preferred notification platform (such as SMS, a Web dashboard etc.), for the demo purpose of this hackathon, we use a Telegram bot with a simple subscribe/unsubscribe funtion to broadcast the notifications.
 
 ## f) Getting Started
 
