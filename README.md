@@ -22,8 +22,6 @@ youtube link here
 
 ## d) Solution Description
 
-## e) Project Roadmap
-
 ## f) Getting Started
 
 ### Creating a Telegram Bot ###
