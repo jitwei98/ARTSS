@@ -27,6 +27,20 @@ This could preempt possible incidents, allowing for proper action to be prepared
 
 Our solution consists of Python scripts running on servers, with the camera feeds as input. When dangerous driver behaviors are detected, a HTTP request with the camera location information is sent to an API endpoint built using Node RED, and the Node RED API will push the notifications to the preferred notification platform (such as SMS, a Web dashboard etc.), for the demo purpose of this hackathon, we use a Telegram bot with a simple subscribe/unsubscribe funtion to broadcast the notifications.
 
+### High level overview of the Python script
+1. Read a video/camera feed using OpenCV's [cv.VideoCapture()](https://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture-videocapture) and decodes the video frame using [VideoCapture::read](https://docs.opencv.org/2.4/modules/highgui/doc/reading_and_writing_images_and_video.html#videocapture-read)
+1. Detect the lanes using OpenCV's [findContours()](https://docs.opencv.org/3.4/d3/dc0/group__imgproc__shape.html#ga17ed9f5d79ae97bd4c7cf18403e1689a) function, the lanes are hardcoded in the demo because we could not find footage of the road without traffic.
+1. Convert each frame to grayscale
+1. Select the pixels to track using Shi-Tomasi Corner Detector [[ref]](https://docs.opencv.org/3.0-beta/modules/imgproc/doc/feature_detection.html#goodfeaturestotrack)
+1. Estimate the motion of the tracked pixels using the Lucas-Kanade method [[ref]](https://docs.opencv.org/3.0-beta/modules/video/doc/motion_analysis_and_object_tracking.html#calcopticalflowpyrlk)
+1. If a tracked pixel switched between different lanes (labelled as different contours in step 2) more than X times in the span of Y frames, where X and Y are parameters that can be configured manually, send a HTTP request with the camera location to the Node RED API endpoint to broadcast the information.
+1. Visualize the motion path for each frame
+
+
+### Node RED API
+1. Listen to HTTP request from the Python script(s)
+1. Broadcast notifications to preferred platform (we used a simple Telegram bot with a subscribe/unsubscribe function for this hackathon)
+
 ## f) Getting Started
 
 ### Creating a Telegram Bot ###
