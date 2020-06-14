@@ -20,8 +20,8 @@ youtube link here
 ## f) Getting Started
 
 ### Creating a Telegram Bot ###
-1. Refer to instructions here (https://core.telegram.org/bots#3-how-do-i-create-a-bot)
-1. Note down your Telegram bot token
+1. Refer to the instructions [here](https://core.telegram.org/bots#3-how-do-i-create-a-bot).
+1. Note down your Telegram bot token.
 
 
 ### Node RED API ###
@@ -41,8 +41,10 @@ python3 -m venv venv
 ```
 
 Note: 
-The source of the camera feed can be changed in line 47 : vehicle-motion-path-detection.py
+The source of the camera feed can be changed on `line 47 : vehicle-motion-path-detection.py`
+```
 cap = cv.VideoCapture("test_video_4.mp4")
+```
 
 ## h) Live Demo
 
