@@ -13,12 +13,38 @@ youtube link here
 
 ## c) Solution Architecture
 
-
 ## d) Solution Description
 
 ## e) Project Roadmap
 
 ## f) Getting Started
+
+### Creating a Telegram Bot ###
+1. Refer to instructions here (https://core.telegram.org/bots#3-how-do-i-create-a-bot)
+1. Note down your Telegram bot token
+
+
+### Node RED API ###
+1. Replace `package.json` in Node RED source with `package.json` in this repo.
+1. In the Node RED editor, click on the menu icon on the top right corner and select import, upload `node-red-api.json` in this repo.
+1. Once the flow has been imported successfully, double click on any of the Telegram nodes, click on the edit button beside the Bot property of the node, and replace the Telegram bot token with your Telegram bot token acquired in the steps above.
+1. Click deploy.
+1. Find your Telegram bot on Telegram and send `/start` to subscribe to the traffic notifications. Send `/help` to see the list of available commands.
+
+
+### Python Scripts ###
+On a server/computer with the camera feed, run:
+```
+python3 -m venv venv
+(venv) pip install -r requirements.txt
+(venv) python3 vehicle-motion-path-detection.py
+```
+
+Note: 
+The source of the camera feed can be changed in line 47 : vehicle-motion-path-detection.py
+cap = cv.VideoCapture("test_video_4.mp4")
+
+## h) Live Demo
 
 ## i) Technologies Used
 [IBM Cloud](https://www.ibm.com/sg-en/cloud)
