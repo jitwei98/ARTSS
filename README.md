@@ -25,6 +25,8 @@ Our solution tracks objects on the road, as well as its motion across frames. Wi
 
 This could preempt possible incidents, allowing for proper action to be prepared - dispatching of personnel or alerting of the driver via led street signs etc.
 
+Our solution consists of Python scripts running on servers, witht the camera feeds as input. API is built on Node-RED and connected to a notification platfrom (Telegram as a stand-in).
+
 ## f) Getting Started
 
 ### Creating a Telegram Bot ###
