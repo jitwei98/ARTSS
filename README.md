@@ -36,6 +36,8 @@ Our solution consists of Python scripts running on servers, with the camera feed
 1. If a tracked pixel switched between different lanes (labelled as different contours in step 2) more than X times in the span of Y frames, where X and Y are parameters that can be configured manually, send a HTTP request with the camera location to the Node RED API endpoint to broadcast the information.
 1. Visualize the motion path for each frame
 
+### Rules for flagging
+As the cameras used on our roads are static, we are able to set rules for flagging of dangerous driving behavoir. We do so by sectioning the road up into many lines "parallel" to the lanes in the road, and tracking how often and how quickly the tracked pixel (vehicle) moves between these lines. We can also use this method to determine lane positioning, and if the vehicle is centered in its lane.
 
 ### Node RED API
 1. Listen to HTTP request from the Python script(s)
